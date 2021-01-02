@@ -10,7 +10,7 @@
 
 $(document).ready(function() {
     var jumbotron = document.getElementsByClassName("jumbotron");
-    var getDate = dayjs().format('MMMM-DD-YYYY');
+    var getDate = dayjs().format('MMMM DD, YYYY');
     var dateBlock = $("<p>" + getDate +  "</p>");
     $(jumbotron).append(dateBlock);
     // var newTimeBlock = $("#time-block");
