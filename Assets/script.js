@@ -32,14 +32,14 @@ $(document).ready(function() {
     var timeBlock = document.getElementById("#time-block");
 
     // loop through the business hours array and append to time-block section
-    businessHourList.forEach(function(hour) {
+    $.each(businessHourList,function(i,hour) {
         var newTimeBlock = $("<p>" + hour + "</p>");
         $("#time-block").append(newTimeBlock);
-            // add event listener and append to time-block section
-            $("#time-block").click(function(){
-                var newEvent = $("<p>");
-                newEvent.text(" ");
-                newTimeBlock.append(newEvent);
-            });
+        // add event listener and append to time-block section
+        $("#time-block").click(function(){
+            var newEvent = $("<p>");
+            newEvent.text(" ");
+            newTimeBlock.append(newEvent);
+        });
     });
 });

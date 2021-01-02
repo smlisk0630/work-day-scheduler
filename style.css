@@ -26,8 +26,13 @@ textarea{
 }
 
 .time-block{
-  text-align: center;
+  text-align: left;
   border-radius: 15px;
+}
+
+.time-block p {
+  border-bottom: 1px solid gray;
+  padding: 10px;
 }
 
 .row {
