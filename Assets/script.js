@@ -37,9 +37,17 @@ $(document).ready(function() {
         $("#time-block").append(newTimeBlock);
         // add event listener and append to time-block section
         $("#time-block").click(function(){
-            var newEvent = $("<p>");
-            newEvent.text(" ");
+            var newEvent = $("<input>").attr({type: "text"}
+            );
             newTimeBlock.append(newEvent);
         });
+        // change colors based on current time
+        // if(businessHourList < now) {
+        //     newEvent.attr("gray");
+        // } else if(businessHourList === now) {
+        //     newEvent.attr("red");
+        // } else {
+        //     newEvent.attr("green");
+        // }
     });
 });
