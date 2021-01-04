@@ -30,15 +30,16 @@ textarea{
   border-radius: 15px;
 }
 
-.time-block p {
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;
   border-bottom: 1px solid gray;
   padding: 10px;
 }
 
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
+input {
+  width: 80%;
 }
 
 .hour {
