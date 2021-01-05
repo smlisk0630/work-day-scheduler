@@ -31,10 +31,17 @@ $(document).ready(function() {
 
         })
 
+        // create and append save button
+        var saveButton = $("<button>");
+        $(saveButton).addClass("saveBtn");
+        $(".row").append(saveButton);
+        console.log(saveButton);
         // add event listener to save button and save to local storage
         $(".saveBtn").click(function() { var input = $("input").val();
-            localStorage.setItem("input", JSON.stringify(input));
-            console.log("input");
+
+        $(".row input").each(function() {
+                localStorage.setItem("input", JSON.stringify(input));
+            })
         })
     })
 }
