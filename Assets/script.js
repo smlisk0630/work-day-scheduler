@@ -3,7 +3,7 @@ function time() {
 // format time to display hour using dayjs library
 var businessHour = dayjs().hour();
 
-var input = document.getElementsByClassName("row").value;
+
 
 $(document).ready(function() {
     // get jumbotron section
@@ -32,8 +32,9 @@ $(document).ready(function() {
         })
 
         // add event listener to save button and save to local storage
-        $(".saveBtn").click(function() {
-            localStorage.setItem("savedEvent", input);
+        $(".saveBtn").click(function() { var input = $("input").val();
+            localStorage.setItem("input", JSON.stringify(input));
+            console.log("input");
         })
     })
 }
