@@ -1,17 +1,15 @@
 function time() {
 
-var businessDate = new Date();
-
-// 
+// format time to display hour using dayjs library
 var businessHour = dayjs().hour();
-console.log(businessHour);
 
+var input = document.getElementsByClassName("row").value;
 
 $(document).ready(function() {
     // get jumbotron section
     var jumbotron = document.getElementsByClassName("jumbotron");
     // call current date/time and format as month-day-year
-    var getDate = dayjs().format('MMMM DD, YYYY');
+    var getDate = dayjs().format("MMMM DD, YYYY");
     //create new paragraph and add date to it
     var dateBlock = $("<p>" + getDate +  "</p>");
     // append new paragraph and date to jumbotron section
@@ -30,7 +28,12 @@ $(document).ready(function() {
             } else {
                 $(this).parent().addClass("future");
             }
-            console.log(currentTime);
+
+        })
+
+        // add event listener to save button and save to local storage
+        $(".saveBtn").click(function() {
+            localStorage.setItem("savedEvent", input);
         })
     })
 }
