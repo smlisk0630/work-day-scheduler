@@ -35,7 +35,8 @@ $(document).ready(function() {
 
         // add event listener to save button and save to local storage
         $(".row input").each(function(i, input) {
-            $(".saveBtn").click(function() { 
+            $(".saveBtn").click(function(event) { 
+                event.preventDefault();
                 localStorage.setItem($(input).attr("data-time"), $(input).val());
             })
         })
