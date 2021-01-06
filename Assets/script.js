@@ -33,13 +33,12 @@ $(document).ready(function() {
 
         // create and append save button
         var saveButton = $("<button>");
-        $(saveButton).addClass("saveBtn");
+        $(saveButton).addClass("saveBtn far fa-save");
         $(".row").append(saveButton);
         console.log(saveButton);
         // add event listener to save button and save to local storage
-        $(".saveBtn").click(function() { var input = $("input").val();
-
-        $(".row input").each(function() {
+        $(".row").each(function() {
+            $(".saveBtn").click(function() { var input = $("input").val();
                 localStorage.setItem("input", JSON.stringify(input));
             })
         })
