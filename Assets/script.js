@@ -3,8 +3,6 @@ function time() {
 // format time to display hour using dayjs library
 var businessHour = dayjs().hour();
 
-
-
 $(document).ready(function() {
     // get jumbotron section
     var jumbotron = document.getElementsByClassName("jumbotron");
@@ -28,18 +26,17 @@ $(document).ready(function() {
             } else {
                 $(this).parent().addClass("future");
             }
-
         })
 
         // create and append save button
         var saveButton = $("<button>");
         $(saveButton).addClass("saveBtn far fa-save");
         $(".row").append(saveButton);
-        console.log(saveButton);
+
         // add event listener to save button and save to local storage
-        $(".row").each(function() {
-            $(".saveBtn").click(function() { var input = $("input").val();
-                localStorage.setItem("input", JSON.stringify(input));
+        $(".row input").each(function(i, input) {
+            $(".saveBtn").click(function() { 
+                localStorage.setItem($(input).attr("data-time"), $(input).val());
             })
         })
     })
