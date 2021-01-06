@@ -3,7 +3,14 @@ function time() {
 // format time to display hour using dayjs library
 var businessHour = dayjs().hour();
 
+// gets data saved in local storage
 $(document).ready(function() {
+    for (let i = 9; i < 18; i++) {
+        var getData = localStorage.getItem(i);
+        console.log(getData);
+        $("input").find("[data-time='" + i + "']").val(getData);
+    }
+    
     // get jumbotron section
     var jumbotron = document.getElementsByClassName("jumbotron");
     // call current date/time and format as month-day-year
