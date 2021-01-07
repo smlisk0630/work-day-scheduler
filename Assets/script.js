@@ -3,12 +3,11 @@ function time() {
 // format time to display hour using dayjs library
 var businessHour = dayjs().hour();
 
-// gets data saved in local storage
+// gets data saved in local storage by assigning input value to getData
 $(document).ready(function() {
     for (let i = 9; i < 18; i++) {
         var getData = localStorage.getItem(i);
-        console.log(getData);
-        $("input").find("[data-time='" + i + "']").val(getData);
+        $("input[data-time='" + i + "']").val(getData);
     }
     
     // get jumbotron section
