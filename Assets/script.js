@@ -36,7 +36,7 @@ $(document).ready(function() {
 
         // create and append save button
         var saveButton = $("<button>");
-        $(saveButton).addClass("saveBtn far fa-save");
+        $(saveButton).addClass("saveBtn far fa-save fa-w-14 fa-2x");
         $(".row").append(saveButton);
 
         // add event listener to save button and save to local storage
